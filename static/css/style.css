@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:'Open Sans', sans-serif;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+}
+
+/* Background Image */
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+
+background: url("../images/diabetes-bg.png") no-repeat center center fixed;
+background-size: cover;
+
+animation: bgZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes bgZoom{
+0%{background-size:100%;}
+100%{background-size:110%;}
+}
+
+/* Dark overlay */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:-1;
+}
+
+/* Glassmorphism Card */
+
+.login{
+width:380px;
+padding:40px;
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+border-radius:15px;
+border:1px solid rgba(131, 13, 13, 0.2);
+box-shadow:0 8px 32px rgba(0,0,0,0.37);
+
+animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* Title */
+
+.login h1{
+margin-bottom:10px;
+font-size:32px;
+letter-spacing:1px;
+color: black;
+}
+
+/* Subtitle */
+
+.subtitle{
+font-size:14px;
+opacity:0.8;
+margin-bottom:20px;
+color: black;
+}
+
+/* Inputs */
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+outline:none;
+border-radius:6px;
+background:rgba(255,255,255,0.15);
+color:white;
+font-size:14px;
+transition:0.4s;
+}
+
+input::placeholder{
+color:#ddd;
+}
+
+input:focus{
+background:rgba(255,255,255,0.25);
+box-shadow:0 0 12px #4facfe;
+transform:scale(1.03);
+}
+
+/* Button */
+
+.btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:6px;
+background:linear-gradient(45deg,#4facfe,#00f2fe);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.btn:hover{
+transform:scale(1.07);
+box-shadow:0 0 18px #00f2fe;
+}
+
+/* Prediction Text */
+
+#prediction{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+animation: fadeText 1s ease-in-out;
+}
+
+.risk-title{
+font-size:22px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.risk-advice{
+font-size:16px;
+margin-bottom:10px;
+}
+
+/* Prediction Colors */
+
+.high-risk{
+color:#ff4d4d;
+}
+
+.medium-risk{
+color:#ffd633;
+}
+
+.low-risk{
+color:#4dff88;
+}
+
+@keyframes fadeText{
+0%{
+opacity:0;
+transform:translateY(20px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+/* Risk Progress Bar */
+
+.progress-container{
+width:100%;
+background:#ddd;
+border-radius:10px;
+margin-top:10px;
+}
+
+.progress-bar{
+height: 22px;
+background: linear-gradient(90deg, #ff4d4d, #ffcc00, #4dff88);;
+border-radius:10px;
+text-align:center;
+font-size:12px;
+color:black;
+font-weight:bold;
+}
+
+/* Footer */
+
+.footer{
+margin-top:20px;
+font-size:12px;
+opacity:0.7;
+}
